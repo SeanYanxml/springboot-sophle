@@ -26,9 +26,9 @@
 	</dependencyManagement>
   <modules>
 <!--  	<module>springboot-starter-package</module>-->
-<!--  	<module>springboot-starter-standard</module>-->
 <!--  	<module>springboot-interceptor</module>-->
-<!--  	<module>springboot-standard</module>-->
       <module>spring-boot-cache</module>
+      <module>springboot-standard-modules</module>
+	  <module>springboot-standard</module>
   </modules>
 </project>

@@ -10,7 +10,7 @@ public class RedisDemoCacheServiceImpl {
     /**
      * 进行Cache测试工具.
      */
-    @Cacheable(cacheNames = {"test"},key = "test"+count.toString(), cacheManager = "redisCacheManager")
+    @Cacheable(cacheNames = {"test"},key = "test", cacheManager = "redisCacheManager")
     public String pipCache(String name){
         return "hello"+(count++);
     }

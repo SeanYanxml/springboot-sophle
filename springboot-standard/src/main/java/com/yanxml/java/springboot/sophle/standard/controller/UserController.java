@@ -1,6 +1,10 @@
 package com.yanxml.java.springboot.sophle.standard.controller;
 
 import java.util.List;
+
+import com.yanxml.java.springboot.sophle.standard.domain.bo.UserBO;
+import com.yanxml.java.springboot.sophle.standard.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +23,9 @@ import com.yanxml.java.springboot.sophle.standard.domain.vo.UserVO;
 
 @RestController(value="/user")
 public class UserController {
+
+	@Autowired
+	private IUserService userService;
 	
 	@RequestMapping(path="/insert", method = RequestMethod.POST)
 	public CommonResponse<String> insert(@RequestBody UserBaseRequest request){
@@ -43,5 +50,13 @@ public class UserController {
 	@RequestMapping(path="/delete", method = RequestMethod.POST)
 	public CommonResponse<Void> delete(@RequestParam long userId){
 		return null;
+	}
+
+	@RequestMapping(path = "getByName", method = RequestMethod.GET)
+	public CommonResponse<UserVO> getByName(String name){
+		UserBO userBO = userService.getByName("");
+		// transfet userBO --> userVO --> CommonResponse
+		UserVO userVO = new UserVO();
+		return new CommonResponse(userVO).success();
 	}
 }

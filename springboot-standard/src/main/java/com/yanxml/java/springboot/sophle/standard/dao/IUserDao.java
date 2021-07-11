@@ -1,5 +1,8 @@
 package com.yanxml.java.springboot.sophle.standard.dao;
 
+import com.yanxml.java.springboot.sophle.standard.domain.bo.UserBO;
+import com.yanxml.java.springboot.sophle.standard.domain.entity.UserDO;
+
 /**
 *
 * Author: sean
@@ -7,5 +10,7 @@ package com.yanxml.java.springboot.sophle.standard.dao;
 */
 
 public interface IUserDao {
+
+    public UserDO getByName(String name);
 
 }
